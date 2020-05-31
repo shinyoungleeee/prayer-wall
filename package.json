@@ -1,34 +1,19 @@
 {
   "name": "prayer-wall",
-  "private": true,
   "version": "0.0.1",
+  "repository": "git@github.com:shinyoungleeee/prayer-wall.git",
+  "license": "MIT",
+  "private": true,
   "scripts": {
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "dev": "gatsby develop",
-    "n:build": "netlify build",
-    "n:dev": "netlify dev",
-    "n:deploy": "netlify build && netlify deploy",
-    "netlify": "netlify"
-  },
-  "dependencies": {
-    "@emotion/core": "^10.0.28",
-    "axios": "^0.19.2",
-    "gatsby": "^2.21.37",
-    "gatsby-plugin-emotion": "^4.3.2",
-    "gatsby-plugin-typescript": "^2.4.3",
-    "netlify-identity-widget": "^1.6.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^6.0.0"
+    "bootstrap": "yarn && lerna bootstrap",
+    "clean": "lerna run clean && lerna clean -y && rm -rf",
+    "dev": "lerna run dev --parallel",
+    "lerna": "lerna"
   },
   "devDependencies": {
-    "@types/netlify-identity-widget": "^1.4.1",
-    "@types/node": "^14.0.5",
-    "@types/react": "^16.9.35",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-helmet": "^6.0.0",
-    "netlify-cli": "^2.52.0",
-    "typescript": "^3.9.3"
-  }
+    "lerna": "^3.22.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
